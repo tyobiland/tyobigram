@@ -448,7 +448,7 @@ footer {
   }
 
   .experience-text1 {
-    top: 20%;
+    top: 35%;
   }
 
   .experience-text1 h2 {
@@ -457,8 +457,7 @@ footer {
 
   .experience-text1 p {
     background: none;
-    font-size: 20px;
-    width: 100%;
+    font-size: 10px;
   }
 
   .experience-text1 p:hover {
