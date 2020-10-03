@@ -430,11 +430,15 @@ footer {
   }
 
   .feedback-icon1 {
-    padding-bottom: 180px;
+    padding-bottom: 300px;
   }
 
   .feedback-icon2 {
-    padding-bottom: 180px;
+    padding-bottom: 300px;
+  }
+
+  .feedback-icon3 {
+    padding-bottom: 300px;
   }
 
   .lesson-icon img {
