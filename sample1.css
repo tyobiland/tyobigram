@@ -446,14 +446,22 @@ footer {
     padding-bottom: 50px;
   }
 
+  .experience-text1 {
+    top: 20%;
+  }
+
   .experience-text1 h2 {
-    font-size: 11px;
+    display: none;
   }
 
   .experience-text1 p {
-    padding: 10px;
-    font-size: 10px;
+    background: none;
+    font-size: 20px;
     width: 100%;
+  }
+
+  .experience-text1 p:hover {
+    background: none;
   }
 
   footer {
