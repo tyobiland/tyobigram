@@ -1,395 +1,458 @@
+/* *{ }ではすべての要素に指定することができる　======== */
+* {
+   /* widthの中にpaddingとborder両方含めることができるので、
+   レイアウト崩れを防止することができる ======= */
+  box-sizing: border-box;
+}
+
+
 body {
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
+.clear {
+  clear: left;
+}
 
 .container {
-  max-width: 1300px;
+  max-width: 1170px;
   width: 100%;
+  padding: 0 10px;
+  /* 上下　左右に余白を作る ========= */
   margin: 0 auto;
 }
 
-/*　ホーム画像の表示エリア　====== */
-.home-slide {
-  position: relative;
-  overflow: hidden;
-  /* 画像のサイズを合わせる ====== */
-  width: 100%;
-  height: 800px;
-  margin: auto;
-}
-
-/* 画像の設定 ======= */
-.home-slide img {
-  position: absolute;
-  /*　画像のサイズを表示エリアに合わせる ====== */
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  animation: slideAnime 15s ease infinite;
-}
-
-
-.home-silde img:nth-of-type(1){ animation-delay: 0s }
-.home-slide img:nth-of-type(2){ animation-delay: 3s }
-.home-slide img:nth-of-type(3){ animation-delay: 6s }
-.home-slide img:nth-of-type(4){ animation-delay: 9s }
-.home-slide img:nth-of-type(5){ animation-delay: 12s }
-
-@keyframes  slideAnime {
-  0% { opacity: 0 }
-  2% { opacity: 1 }
-  18% { opacity: 1 }
-  20% { opacity: 0 }
-  100% { opacity: 0 }
-}
-
-.home-text {
-  position: absolute;
-  top: 18%;
-  right: 40%;
-  left: 40%;
-  width: auto;
-}
-
 .top-wrapper {
-  padding: 4% 0;
+  padding: 20% 0 100px 0;
+  /* CSSで背景画像を貼る ============ */
+  background-image: url(images/home.png);
+  color: white;
+  background-size: cover;
+  /* インライン要素も動かせる ========= */
   text-align: center;
-  opacity: 0.6;
 }
 
-.top-wrapper h2 {
-  font-weight: normal;
-}
-
-.top-wrapper-text {
-  font-size: 30px;
-  line-height: 65px;
-  letter-spacing: 16px;
+.top-wrapper h1 {
+  /* 透過させる ======== */
+  opacity: 0.7;
+  font-size: 45px;
+  /* 文字の間隔を設定する ======== */
+  letter-spacing: 5px;
+  padding-bottom: 25px;
 }
 
 .top-wrapper p {
-  padding-top: 20px;
   font-size: 18px;
-  line-height: 40px;
-  letter-spacing: 6px;
-  padding-bottom: 80px;
-}
-
-
-/* 春の内容 ======= */
-.spring-wrapper {
-  text-align: center;
-  padding-bottom: 200px;
-  position: relative;
-}
-
-.spring-wrapper img {
-  width: 85%;
-}
-
-.spring-wrapper a {
-  display: block;
-  position: absolute;
-  right: 10%;
-  bottom: 250px;
-  background-color: rgba(0, 0, 0, 0.7);
-  line-height: 1px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-.spring-wrapper p {
-  font-size: 25px;
-  padding: 0 10px;
-  color: white;
-}
-
-.spring-wrapper h5 {
-
-}
-
-.spring-wrapper a:hover {
-  background-color: rgba(0, 0, 0, 1);
-}
-
-/* 夏の内容 ======= */
-.summer-wrapper {
-  text-align: center;
-  padding-bottom: 200px;
-  position: relative;
-}
-
-.summer-wrapper img {
-  width: 85%;
-  position: relative;
-}
-
-.summer-wrapper a {
-  display: block;
-  position: absolute;
-  left: 10%;
-  bottom: 250px;
-  background-color: rgba(0, 0, 0, 0.7);
-  line-height: 1px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-.summer-wrapper p {
-  font-size: 25px;
-  padding: 0 10px;
-  color: white;
-}
-
-.summer-wrapper a:hover {
-  background-color: rgba(0, 0, 0, 1);
-}
-
-
-/* 秋の内容 ======= */
-.autumn-wrapper {
-  text-align: center;
-  padding-bottom: 200px;
-  position: relative;
-}
-
-.autumn-wrapper img {
-  width: 85%;
-  position: relative;
-}
-
-.autumn-wrapper a {
-  display: block;
-  position: absolute;
-  right: 10%;
-  bottom: 240px;
-  background-color: rgba(0, 0, 0, 0.7);
-  line-height: 1px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-.autumn-wrapper p {
-  font-size: 25px;
-  padding: 0 10px;
-  color: white;
-}
-
-.autumn-wrapper a:hover {
-  background-color: rgba(0, 0, 0, 1);
-}
-
-
-
-/* 冬の内容 ====== */
-.winter-wrapper {
-  text-align: center;
-  padding-bottom: 200px;
-  position: relative;
-}
-
-.winter-wrapper img {
-  width: 85%;
-  position: relative;
-}
-
-.winter-wrapper a {
-  display: block;
-  position: absolute;
-  left: 10%;
-  bottom: 240px;
-  background-color: rgba(0, 0, 0, 0.7);
-  line-height: 1px;
-  border-radius: 10px;
-  text-decoration: none;
-}
-
-.winter-wrapper p {
-  font-size: 25px;
-  padding: 0 10px;
-  color: white;
-}
-
-.winter-wrapper a:hover {
-  background-color: rgba(0, 0, 0, 1);
-}
-
-
-footer {
-  background-color: rgba(194, 198, 201, 0.8);
-}
-
-.footer-wrapper {
-  text-align: center;
-  display: flex;
-  float: none;
-  padding: 0 80px;
-}
-
-.footer-wrapper a {
-  width: 25%;
-  text-decoration: none;
-}
-
-.footer-wrapper p {
-  font-size: 22px;
-  color: black;
-}
-
-.footer-logo {
-  text-align: center;
-}
-
-.footer-logo img {
-  width: 150px;
-  padding: 60px 0 100px 0;
-}
-
-.last-wrapper {
-  color: white;
   opacity: 0.7;
 }
 
-.last-wrapper p {
+.new p {
+  font-size: 18px;
+  opacity: 1;
+}
+
+.btn-wrapper p {
+  font-size: 18px;
+  opacity: 1;
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  /* rgbaの最後の数値aは透過度を表す
+  opacityを使うと要素全体を透過させてしまう　======== */
+  background-color: rgba(34, 49, 52, 0.9);
+  /* fixedにより要素を常に同じ位置に固定させておける
+  （スクロールしても動かない） ======= */
+  position: fixed;
+  top: 0;
+  /* z-indexは必ずpositionと併用し、要素の重なりの順序を指定
+  （値が大きいほど上に表示される） ======= */
+  z-index: 10;
+}
+
+.logo {
+  width: 180px;
+  margin-top: 20px;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+  margin-right: -25px;
+}
+
+.header-right a {
+  /* 行の高さを変更（行間を変える） ========= */
+  line-height: 65px;
+  padding: 0 25px;
+  color: white;
+  /* インライン要素をブロック要素に変更 ======== */
+  display: block;
+  float: left;
+  /* アニメーションをつけれる「(変化の対象 変化にかかる時間)を指定する」　======= */
+  transition: all 0.5s;
+}
+
+.header-right a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.line {
+  background-color: #239b76;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #55acee;
+}
+
+.btn {
+  padding: 8px 24px;
+  color: white;
+  width: 220px;
+  /* インライン要素をインラインブロック要素に変換
+  （インライン要素［aタグなど］はwidthやheightが設定できない）　======= */
+  display: inline-block;
+  opacity: 0.7;
+  /* ボタン周りの角に丸みを帯びさせる　========= */
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.introduction-wrapper {
+  padding-bottom: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+}
+
+.introduction-wrapper h1 {
+  padding-top: 40px;
+  color: #002856;
+}
+
+.introduction h2 {
+  color: #385dae;
   font-size: 20px;
-  padding: 0 0 0 10px;
+  opacity: 0.7;
+}
+
+.heading {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  color: #5f5d60;
+}
+
+.introduction {
+  float: left;
+  /* 親要素に対してどれくらいの幅を持たせるか ======== */
+  width: 33%;
+}
+
+.txt-contents {
+  width: 80%;
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #385dae;
+  opacity: 0.7;
+}
+
+.sample {
+  padding-top: 600px;
+}
+
+.feedback-wrapper {
+  background-color: rgba(124, 134, 141, 0.1);
+  text-align: center;
+  color: #002856;
+  padding: 80px 0;
+}
+
+.feedback-icon1 {
+  position: relative;
+}
+
+.feedback-icon1 img {
+  padding-top: 50px;
+  padding-right: 35%;
+  width: 65%;
+}
+
+.feedback-text1 {
+  position: absolute;
+  text-align: left;
+  top: 30px;
+  left: 45%;
+}
+
+.feedback-text1 p {
+  padding-right: 35%;
+}
+
+.feedback-icon2 {
+  position: relative;
+}
+
+.feedback-icon2 img {
+  padding-top: 50px;
+  padding-left: 35%;
+  width: 65%;
+}
+
+.feedback-text2 {
+  position: absolute;
+  text-align: left;
+  top: 30px;
+  right: 45%;
+}
+
+.feedback-text2 h3 {
+  padding-left: 35%;
+}
+
+.feedback-text2 p {
+  padding-left: 35%;
+}
+
+.feedbacks {
+  padding: 60px 0 30px 0;
+}
+
+.feedbacks-contents {
+  padding: 15px;
+  background-color: rgba(255, 78, 0, 0.6);
+  color: rgba(0, 0, 0, 1);
+  border-radius: 10px;
+}
+
+.feedbacks-contents:hover {
+  background-color: rgba(255, 78, 0, 1);
+  color: rgba(0, 0, 0, 1);
+  transition: all 0.5s;
+}
+
+.lesson-wrapper {
+  padding-bottom: 80px;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+}
+
+.lesson-wrapper h1 {
+  padding-top: 70px;
+  color: #002856;
+}
+
+.lesson-text {
+  padding-top: 30px;
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+.lesson-icon {
+  padding-top: 50px;
+  padding-bottom: 150px;
+}
+
+.lesson-icon img {
+  width: 20%;
+}
+
+.lesson-icon img:hover {
+  transform: scale(1.5, 1.5);
+}
+
+.lesson-icon p {
+  display: none;
+}
+
+.lesson-icon p:hover {
+  display: block;
+}
+
+.lesson-select-text {
+  padding: 15px;
+  background-color: rgba(255, 78, 0, 0.6);
+  color: rgba(0, 0, 0, 1);
+  border-radius: 10px;
+}
+
+.lesson-select-text:hover {
+  background-color: rgba(255, 78, 0, 1);
+  color: rgba(0, 0, 0, 1);
+  transition: all 0.5s;
+}
+
+.experiences {
+  background-color: rgba(124, 134, 141, 0.1);
+}
+
+.experience-wrapper {
+  text-align: center;
+  position: relative;
+}
+
+.experience-wrapper img {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 80%;
+}
+
+.experience-text1 {
+  position: absolute;
+  height: auto;
+  top: 30%;
+  right: 30%;
+  left: 30%;
+}
+
+.experience-text1 h2 {
+  font-size: 25px;
+  opacity: 0.6;
+}
+
+.experience-text1 p {
+  background-color: rgba(255, 78, 0, 0.6);
+  color: black;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.experience-text1 p:hover {
+  background-color: rgba(255, 78, 0, 1.0);
+}
+
+footer {
+  background-color: rgba(91, 103, 112, 0.5);
+}
+
+.last-wrapper {
+  padding: 50px 0 10px 20px;
+}
+.last-left p {
+  color: white;
+  opacity: 0.6;
+}
+
+.logo {
+  width: 180px;
+  margin-top: 20px;
 }
 
 
+
+/* タブレット用画面 ======= */
 @media(max-width: 1000px) {
-  .home-slide {
-    height: 600px;
-    margin: auto;
+  .introduction img {
+    float: left;
+    /* 親要素に対してどれくらいの幅を持たせるか ======== */
+    width: 100%;
   }
 
-  .home-text {
-    top: 15%;
-    right: 45%;
-    left: 40%;
+  .feedback-icon1 {
+    padding-bottom: 130px;
   }
 
-  .home-text img {
-    width: 150px;
-    text-align: center;
+  .feedback-icon2 {
+    padding-bottom: 130px;
   }
 
-  .top-wrapper {
-    padding: 1% 0;
+  .experience-text1 h2 {
+    font-size: 17px;
   }
 
-  .spring-wrapper {
-    padding-bottom: 100px;
+  .experience-text1 p {
+    padding: 10px;
+    font-size: 15px;
+    width: 100%;
   }
 
-  .spring-wrapper a p {
-    display: none;
+  .lesson-icon img {
+    width: 30%;
+    padding-bottom: 50px;
   }
-
-  .summer-wrapper {
-    padding-bottom: 100px;
-  }
-
-  .summer-wrapper a p {
-    display: none;
-  }
-
-  .autumn-wrapper {
-    padding-bottom: 100px;
-  }
-
-  .autumn-wrapper a p {
-    display: none;
-  }
-
-  .winter-wrapper {
-    padding-bottom: 100px;
-  }
-
-  .winter-wrapper a p {
-    display: none;
-  }
-
-  .footer-wrapper p {
-    font-size: 16px;
-    color: black;
-  }
-
 }
 
 
+/* スマホ用画面 ======= */
 @media(max-width: 670px) {
-  .home-slide {
-    height: 350px;
-    margin: auto;
+  .top-wrapper {
+    text-align: left;
   }
 
-  .home-text {
-    top: 8%;
-    right: 45%;
-    left: 35%;
+  .top-wrapper h1 {
+    font-size: 30px;
+    /* 文字の間隔を設定する ======== */
+    letter-spacing: 3px;
+    padding: 25px 0;
   }
 
-  .home-text img {
-    width: 150px;
-    text-align: center;
+  .btn {
+    width: 100%;
   }
 
-  .spring-wrapper {
-    padding-bottom: 100px;
-  }
-
-  .spring-wrapper a p {
+  .header-right {
     display: none;
   }
 
-  .summer-wrapper {
-    padding-bottom: 100px;
-  }
-
-  .summer-wrapper a p {
-    display: none;
-  }
-
-  .autumn-wrapper {
-    padding-bottom: 100px;
-  }
-
-  .autumn-wrapper a p {
-    display: none;
-  }
-
-  .winter-wrapper {
-    padding-bottom: 100px;
-  }
-
-  .winter-wrapper a p {
-    display: none;
-  }
-
-  .media-footer {
-    display: flex;
-  }
-
-  .footer-wrapper {
-    padding-top: 30px;
+  .menu-icon {
     display: block;
-  　flex-direction: column;
   }
 
-  .footer-wrapper p {
-    font-size: 20px;
-    opacity: 0.6;
+  .introduction {
+    /* 親要素に対してどれくらいの幅を持たせるか ======== */
+    width: 100%;
+    padding-bottom: 70px;
   }
 
-  .footer-logo img {
-    width: 150px;
-    padding-bottom: 35px;
+  .feedback-icon1 {
+    padding-bottom: 180px;
   }
 
-  .last-wrapper p {
-    font-size: 20px;
+  .feedback-icon2 {
+    padding-bottom: 180px;
+  }
+
+  .lesson-icon img {
+    width: 50%;
+    padding-bottom: 50px;
+  }
+
+  .experience-text1 h2 {
+    font-size: 11px;
+  }
+
+  .experience-text1 p {
+    padding: 10px;
+    font-size: 10px;
+    width: 100%;
+  }
+
+  footer {
     text-align: center;
   }
 }
